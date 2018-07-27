@@ -1,7 +1,7 @@
-# Utilitaire BDD
-
-Ce dossier contient une version très allégée de la base de données PASCAL 2012.
-Il contient quelques outils pour utiliser plus facilement les images destinées à être utilisées en segmentation.
+# Utilitaire 
+Ce dossier contient quelques outils pour exploiter plus facilement les images de Pascal destinées à être utilisées en segmentation.
+Avant de commencer, il est nécessaire de copier les dossiers JPEGImages et SegmentationClass du dévelopment kit pascal dans ce dossier
+http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit 
 
 ## Contenu du dossier
 ### JPEGImages
