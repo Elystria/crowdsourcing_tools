@@ -1,6 +1,6 @@
 function generate_json(path)
-% Post-traitement : 
 
+% Post-traitement : 
 % Convertit le .csv récupéré depuis mturk en plusieurs .json compatible avec notre
 % implémentation de otis
 
@@ -52,6 +52,3 @@ while ischar(ligne)
     end
 end
 fclose(fid);
-
-
-% Séparer chaque 

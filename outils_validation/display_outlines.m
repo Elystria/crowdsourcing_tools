@@ -10,7 +10,6 @@ function display_outlines(img_path, nom_batch, nom_dossier)
 
 % nom_dossier : nom du dossier où seront stockés les figures résultat
 
-
 close all
 
 datas = csv2cell(nom_batch,'fromfile');

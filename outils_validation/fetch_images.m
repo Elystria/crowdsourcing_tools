@@ -1,5 +1,4 @@
 function fetch_images( path )
-
 % Go through the csv file and copy the images needed for the segmentation
 % in the path folder
 
@@ -13,7 +12,7 @@ indice_reject = find(strcmp(splitter, 'Reject'));
 
 while ischar(ligne)
     
-    %ligne vide : sortir
+    % ligne vide : sortir
     ligne = fgetl(fid);
     if ~ischar(ligne)
         break;
