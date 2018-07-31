@@ -18,3 +18,6 @@ Sélectionne uniquement les images de la BDD spécifiées dans le fichier train 
 
 ### masques.m
 Crée les masques binaires des images par classe d'objet. Utile pour calculer les scores de Jaccard par exemple.
+
+### generer_csv.m
+Créée le fichier csv demandé par Amazon pour récupérer les images à annoter

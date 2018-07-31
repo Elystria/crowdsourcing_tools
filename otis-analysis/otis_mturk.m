@@ -6,13 +6,13 @@
 % foreground initial
 
 
-function otis_mturk(path, constraint, fg_constraint)
+function otis_mturk(path, constraint, fg_constraint, bg_contraint)
 
 close all;
 
 prepareData(path, nb_hit);
 
-computeSegmentation(path, constraint, fg_constraint);
+computeSegmentation(path, constraint, fg_constraint, bg_constraint);
 
 displayInit(path, constraint);
 
