@@ -74,5 +74,7 @@ formatSpec = "moyenne : %d \n sigma : %d \n mediane : %d ";
 fprintf(fid, formatSpec, temps_moyen, sigma, mediane_temps);
 
 histogram(temps);
+xlabel("temps");
+ylabel("nb de tâches");
 
 
