@@ -1,6 +1,8 @@
 # Crowdsourcing tools
 
 Ce git présente un ensemble de scripts utilisés pour faciliter la préparation d'une campagne de crowdsourcing d'annotation d'images de la base PASCAL 2012 sur la plateforme Amazon Mechanical Turk. 
+Ces outils ont été utilisés en complétion de l'application située [ici](https://github.com/Elystria/elystria.github.io)
+
 
 ## Contenu du git
 ### utilitaires_bdd : 

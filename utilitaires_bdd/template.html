@@ -1,0 +1,32 @@
+<div><input id="annotation-data" name="annotation-data" type="hidden" value="" />
+<style type="text/css">html, body, .style-elements { height: 100% } #mturk_form { display: none }
+</style>
+<script src="https://elystria.github.io/server/dist/elm-pep.js"></script> <script src="https://elystria.github.io/server/dist/Main.js"></script> <script charset="utf-8">
+		// Function returning the size of the container element for the app.
+		// In our case, the full layout viewport.
+		const layoutViewportSize = () => ({
+			width: document.documentElement.clientWidth,
+			height: document.documentElement.clientHeight
+		});
+		const containerSize = layoutViewportSize;
+		// The image to display
+		const img = {
+			width: ${img_width},
+			height: ${img_height},
+			url: "${img_url}"
+			// comment to prevent mturk templating system to merge those two '}'
+		};
+		// Set elm app flags
+		const flags = {
+			deviceSize: containerSize(),
+			mturkMode: true,
+			images: [img],
+annotation: "TV & MONITOR",
+			config: `{
+				"classes": [],
+				"annotations": [ "outline"]
+			}`
+		};
+		// Start elm app.
+		const app = Elm.Main.fullscreen(flags);
+	</script> <script src="https://elystria.github.io/server/dist/ports-mturk.js"></script></div>
