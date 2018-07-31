@@ -1,0 +1,60 @@
+function [ jaccard, moyenne, mediane ] = score_segmentation( path )
+
+% Charger les resultats
+load([path, '/results.mat']);
+load([path, '/classe.mat']);
+
+clear fg*
+clear skel*
+clear SP*
+
+jaccard = zeros(nb_images, nb_hit);
+
+for i=1:nb_images
+   for j=1:nb_hit
+       
+       % Get the image name
+       eval(['datas = outlines' int2str(i) '_' int2str(j) ';']);
+       URL = datas.images{1, 1}.image;
+       splitter = split(URL, '/');
+       picture_name = splitter{end};
+       splitter = split(picture_name, '.');
+       picture_name = splitter{1};
+
+       % Get the Pascal mask
+       eval(['classe = classe' int2str(i) '_' int2str(j) ';']);
+       P_mask = imread(['Masques/', classe, '/', picture_name, '.png']);
+       P_mask = P_mask./255;
+       
+       % Get the mask segmentation
+       nb_masks = nb_obj(i,j);
+       [m,n] = size(P_mask(:,:,1));
+       G_mask = zeros(m,n);
+       
+       for k = 1:nb_masks
+           eval(['seg = seg' int2str(i) '_' int2str(j) '_' int2str(k) ';']);
+           G_mask = G_mask | seg;
+            
+       end
+       
+       inter_mask = G_mask & P_mask;
+       union_mask = G_mask |P_mask;
+       
+       jaccard(i,j) = sum(inter_mask(:) == 1) / sum(union_mask(:) == 1);
+
+       
+   end
+    
+end
+
+jaccard = jaccard(:);
+moyenne = mean(jaccard);
+mediane = median(jaccard);
+
+fid = fopen([path '/jaccard.txt'], 'w');
+formatSpec = "moyenne : %d \n mediane : %d";
+fprintf(fid, formatSpec, moyenne, mediane);
+
+
+end
+
